@@ -34,32 +34,33 @@ function push(s, i, lineIdx) {
 
 lines.forEach(function(line, lineIdx) {
   line.forEach(function(s, i) {
+    var length = line.length -1;
     if (s === 'L') {
       if (col > 0) {
         col--;
       }
-      if ((line.length -1 === i) || ((line.length -1 !== i) && col === 0)) {
+      if ((length === i) || ((length !== i) && col === 0)) {
         push(s, i, lineIdx)
       }
     } else if (s === 'R') {
       if (col < 2) {
         col++;
       }
-      if ((line.length -1 === i) || ((line.length -1 === i) && col === 2)) {
+      if ((length === i) || ((length === i) && col === 2)) {
         push(s, i, lineIdx)
       }
     } else if (s === 'U') {
       if (row > 0) {
         row--;
       }
-      if ((line.length -1 === i) || ((line.length -1 === i) && row === 0)) {
+      if ((length === i) || ((length === i) && row === 0)) {
         push(s, i, lineIdx)
       }
     } else if (s === 'D') {
       if (row < 2) {
         row++;
       }
-      if ((line.length -1 === i) || ((line.length -1 === i) &&row === 2)) {
+      if ((length === i) || ((length === i) && row === 2)) {
         push(s, i, lineIdx)
       }
     }
