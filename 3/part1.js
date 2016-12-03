@@ -5,11 +5,9 @@ var fs = require('fs');
 
 var input = fs.readFileSync('./input.txt', 'utf8'),
     lines = input.split('\n').map(function (l) {
-      l = l.trim().replace(/\s+/g, ' ').split(' ').map(function (num) {
+      return l.trim().replace(/\s+/g, ' ').split(' ').map(function (num) {
          return Number(num);
-      });
-
-      console.log(l)
+      })
     }),
     triangles = [];
 
