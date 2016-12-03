@@ -12,7 +12,7 @@ var input = fs.readFileSync('./input.txt', 'utf8'),
     triangles = [];
 
 function sort(arr) {
-return arr.sort(function (a, b) {
+  return arr.sort(function (a, b) {
     return a - b
   });
 }
@@ -32,7 +32,5 @@ transpose(lines).map(function (line) {
     triangles.push(line);
   }
 });
-
-
 
 console.log(triangles.length);
